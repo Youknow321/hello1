@@ -1,0 +1,44 @@
+Assignment No-03
+
+Spam Mail Detection
+
+Basic text classification pipeline using the Natural Language Toolkit (NLTK) and scikit-learn libraries. It trains a Naive Bayes classifier to classify text messages as either "spam" or "ham" (non-spam).
+
+nltk library is imported. NLTK provides various tools and resources for natural language processing.
+
+stopwords and string modules are imported from nltk.corpus and string, respectively. stopwords contains a list of common words to be removed from text, and string provides a string of punctuation characters.
+
+pandas library is imported as pd.
+
+sklearn modules are imported for various functionalities related to machine learning and text classification.
+
+The dataset is loaded using pd.read_csv() from a file named 'spam.csv'. The dataset contains two columns: 'class' (spam/ham) and 'text' (message content).
+
+Columns 'Unnamed: 2', 'Unnamed: 3', and 'Unnamed: 4' are dropped using messages.drop(). These columns are removed from the dataset.
+
+The column names are renamed using messages.rename().
+
+The dataset is explored using various operations like messages.head() (displays the first few rows), messages.groupby().describe() (grouping and describing the dataset based on 'class'), and messages.hist() (plotting histogram of message lengths based on 'class').
+
+The process_text() function is defined to preprocess text by removing punctuation and stopwords. It returns a list of clean words.
+
+The process_text() function is applied to the 'text' column using messages['text'].apply().
+
+The dataset is split into training and testing sets using train_test_split().
+
+A pipeline is created using Pipeline() from scikit-learn. It consists of three steps:
+
+'bow': Converts text strings to integer counts using CountVectorizer() with the process_text() function as the analyzer.
+
+'tfidf': Converts the integer counts to weighted TF-IDF (Term Frequency-Inverse Document Frequency) scores using TfidfTransformer().
+
+'classifier': Trains a Naive Bayes classifier using MultinomialNB().
+
+The pipeline is trained using pipeline.fit() with the training data.
+
+Predictions are made on the testing data using pipeline.predict().
+
+Classification report is printed using classification_report() from scikit-learn, which displays metrics like precision, recall, and F1-score.
+
+A heatmap of the confusion matrix is plotted using seaborn.heatmap() from the seaborn library. The confusion matrix shows the number of true positives, true negatives, false positives, and false negatives.
+
