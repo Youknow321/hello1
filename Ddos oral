@@ -1,0 +1,82 @@
+Assignment No -02 Code Explanation
+
+DDOS Attack Code:
+
+Distributed Denial of Service (DDoS) attack script. It sends a large number of UDP packets to a target IP address and port in order to overwhelm and disrupt the targeted system.
+
+The necessary modules (sys, os, time, socket, random, and datetime) are imported.
+
+The current date and time are obtained using datetime.now().
+
+The IP address and port of the target system are assigned. In this example, the IP address is set to '192.168.5.133' (localhost) and the port is set to 1024.
+
+A socket is created using socket.socket().
+
+A buffer of random data is created using random._urandom(1490).
+
+The screen is cleared using os.system("clear").
+
+Information about the attack, such as the IP address and port of the target, is displayed on the console.
+
+The progress of the attack is displayed with a loading bar using print() statements and time.sleep() for delays.
+
+The attack loop begins, where UDP packets are continuously sent to the target using sock.sendto().
+
+The number of sent packets is incremented, and the port number is increased by one with each iteration.
+
+If the port number reaches the maximum value (65534), it is reset to 1.
+
+IP Spoofing code:
+
+ 
+
+The Scapy library and demonstrates the creation and continuous sending of spoofed TCP packets with a custom payload.
+
+The from scapy.all import * statement imports all functions and classes from the Scapy library.
+
+Variable A is assigned the value '192.168.5.133', which represents the spoofed (fake) source IP address.
+
+Variable B is assigned the value '192.168.5.135', which represents the destination IP address.
+
+Variable C is assigned the result of the RandShort() function, which generates a random source port number for each packet.
+
+Variable D is assigned the value 80, which represents the destination port number.
+
+Variable payload is assigned the value 'Hello Hello Hello', which represents the content of the packet payload.
+
+The code enters an infinite loop using while True:.
+
+Within the loop, a spoofed packet is created using the IP() function to construct the IP header with the specified source and destination IP addresses, and the TCP() function to construct the TCP header with the specified source and destination ports.
+
+The payload is added to the packet using the / operator, which combines the IP and TCP layers with the payload.
+
+The send() function from Scapy is used to send the spoofed packet.
+
+The loop continues indefinitely, sending packets repeatedly.
+
+DNS Attack Code:
+
+A DNS spoofing attack using the Scapy library and the netfilterqueue module. DNS spoofing involves modifying DNS responses to redirect network traffic to a different IP address.
+
+The necessary modules (os, logging, scapy.all, netfilterqueue) are imported.
+
+The screen is cleared using os.system("clear").
+
+Information about the attack is displayed on the console using print() statements.
+
+The DnsSnoof class is defined. It takes hostDict (a dictionary mapping DNS query names to IP addresses) and queueNum (the netfilterqueue queue number) as parameters.
+
+The __call__ method is defined to handle the DNS spoofing attack. It sets up the necessary iptables rule and binds the queue to the specified queue number. The callBack method is called when a packet is received.
+
+The callBack method is defined to modify DNS packets. It checks if the packet has a DNS response layer (DNSRR). If it does, it retrieves the query name and checks if it is present in the hostDict. If it is, the DNS response is modified to point to the IP address specified in the dictionary. The modified packet is then sent.
+
+The __name__ == '__main__' block is executed when the script is run directly. It initializes the hostDict with DNS query names and IP addresses to be spoofed.
+
+The logging module is configured to display log messages with a timestamp.
+
+An instance of the DnsSnoof class is created with the hostDict and queueNum parameters.
+
+The __call__ method of the DnsSnoof instance is called to start the DNS spoofing attack.
+
+Exception handling is implemented to catch and log any OS-related errors.
+
