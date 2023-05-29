@@ -1,0 +1,32 @@
+Create new folder 'docker' and open in VSC
+
+Download extension in VSC 'Docker'
+
+Create new file 'Dockerfile' in 'docker' folder
+
+-------------------------------------------------------
+
+Create new file 'index.js' in 'docker' folder and code
+
+console.log("name = Tom Hanks");
+console.log("country = UK");
+console.log("job = secret agent");
+console.log("name = Tom Hanks");
+
+-------------------------------------------------------
+
+1) node --versiom
+2) docker --verison
+3) node index.js
+
+-------------------------------------------------------
+
+Code in Dockerfile
+
+FROM node:alpine
+copy . /docker
+CMD node /docker/index.js
+
+-------------------------------------------------------
+
+docker build -t docker .

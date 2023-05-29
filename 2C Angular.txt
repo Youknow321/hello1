@@ -1,0 +1,69 @@
+Create new folder 'Angular'
+
+Open 'Angular' folder in VSC
+
+1) node --version
+2) npm install -g @angular/cli@latest
+3) Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser (optional)
+4) ng new part-c
+
+New files will be created in Angular
+Angular --> part-c --> src --> app
+ 
+Edit files:
+1.app.cpmponent.css  2.app.component.html  3.app.component.ts
+
+------------------------------------------------------------------------------------------------------------------------
+
+Delete whole app.component.html file and code:
+ 
+<h1>{{title}}</h1>
+
+<input type="text" #name placeholder="Enter your name" name="name">
+<input type="text" #address placeholder="Enter your address" name="address">
+<input type="text" #contact placeholder="Enter your contact" name="contact">
+<input type="email" #email placeholder="Enter your email" name="email">
+<input type="password" #password placeholder="Enter your password" name="password">
+
+<button (click) = "getValue(name.value,address.value,contact.value,email.value,password.value)"> Register</button>
+
+<h1>Your registered data</h1>
+<p>{{displayname}}</p>
+<p>{{displayaddress}}</p>
+<p>{{displaycontact}}</p>
+<p>{{displayemail}}</p>
+<p>{{displaypassword}}</p>
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Delete whole app.component.ts file and code:
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Registration form';
+
+  displayname = "";
+  displayaddress = "";
+  displaycontact = "";
+  displayemail = "";
+  displaypassword = "";
+
+  getValue(name:string,address:string,contact:string,email:string,password:string){
+    this.displayname = name;
+    this.displayaddress = address;
+    this.displaycontact = contact;
+    this.displayemail = email;
+    this.displaypassword = password;
+    }
+  }
+----------------------------------------------------------------------------------------------------------------------
+
+5) cd part-c
+6) ng serve
+

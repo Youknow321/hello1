@@ -1,0 +1,13 @@
+Create and open new folder 'Jquery' in VSC
+
+Create new file as 'index.html' in Jquery folder
+Open boiler plate using 'html:5' in index.html
+
+Open jquerymobile.com on browser
+Go to download
+Copy 3 links
+
+Paste that 3 links after title in index.html
+
+
+Demos --> Jquery Mobile demos --> Nav bar

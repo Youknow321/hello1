@@ -1,0 +1,28 @@
+Create new folder 'nodejs' and open in VSC
+
+1) npm init
+package name : nodejs
+enter, enter
+auther : rajan
+
+---------------------------------------------------------------
+
+Create new file 'index.js' in nodejs folder and code:
+
+const express = require('express');
+const app = express();
+app.use(express.static('public'))
+app.listen(4000,()=>{
+	console.log('Server is running on port 4000');
+})
+
+--------------------------------------------------------------
+
+create new folder 'public' in nodejs
+
+create new file 'index.html' in 'public' folder and code basic
+
+2) npm install express --save
+3) node index.js
+
+type 'localhost:4000' on browser

@@ -1,0 +1,22 @@
+Create new folder in VSC
+ 
+1) mkdir new
+
+create txt file in 'new' as hello.txt 
+add content in hello.txt
+
+2) cd new
+3) git init
+4) git status
+5) git add hello.txt
+5) git status
+6) git commit -m "This is my program"
+7) git status
+
+open GitHub in chrome
+create new repository in github
+
+8) git remote add origin "Link from repository"
+9) git push -u origin master
+
+File will be uploaded to the repositoy
