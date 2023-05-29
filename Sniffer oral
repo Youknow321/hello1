@@ -1,0 +1,24 @@
+from scapy.all import *
+
+def handler(packet):
+
+    print(packet.summary())
+
+sniff(iface="wlp1s0", prn=handler, store=0)
+
+The from scapy.all import * statement imports all functions and classes from the Scapy library.
+
+The handler function is defined, which takes a packet as a parameter. This function will be called for each captured packet.
+
+Within the handler function, packet.summary() is called to print a summary of the packet. The summary() method provides a concise representation of the packet, including information like the protocol, source, and destination IP addresses, source and destination ports, etc.
+
+The sniff function from Scapy is used to capture packets. It takes several parameters:
+
+iface="wlp1s0": Specifies the network interface to sniff on. In this case, it's set to "wlp1s0". You may need to modify this to match your own network interface name.
+
+prn=handler: Specifies the packet handler function to be called for each captured packet. In this case, the handler function is passed as the prn parameter.
+
+store=0: Disables storing packets in memory. Setting store to 0 ensures that captured packets are not stored, reducing memory usage.
+
+The code will continuously capture packets on the specified network interface and call the handler function for each captured packet, which will print the packet summary.
+
